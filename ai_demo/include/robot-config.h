@@ -1,27 +1,31 @@
-#ifndef CONFIG
-#define CONFIG
+#ifndef CONFIG_H
+#define CONFIG_H
 
 using namespace vex;
 
-extern brain Brain;
+extern brain    Brain;
+extern motor    FrontLeft;
+extern motor    FrontRight;
+extern motor    BackLeft;
+extern motor    BackRight;
+extern motor    LowerIndexer;
+extern motor    UpperIndexer;
+extern motor    Launcher;
+extern motor    LeftIntake;
+extern motor    RightIntake;
 
-// VEXcode devices
-extern motor Left1;
-extern motor Left2;
-extern motor Left3;
-extern motor Right1;
-extern motor Right2;
-extern motor Right3;
-extern motor Middle1;
-extern motor Middle2;
-extern controller Controller;
+extern encoder  LeftEnc;
+extern encoder  RightEnc;
+extern encoder  BackEnc;
 extern inertial Inertial;
+
+extern triport Expander;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
- * 
+ *
  * This should be called at the start of your int main function.
  */
-void  vexcodeInit( void );
+void vexcodeInit(void);
 
 #endif

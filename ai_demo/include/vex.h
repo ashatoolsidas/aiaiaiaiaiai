@@ -7,10 +7,6 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 //
-
-#ifndef VEXH
-#define VEXH
-
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,6 +19,7 @@
 #include "ai_robot_link.h"
 
 #include "robot-config.h"
+#include "drivetrain.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
@@ -36,5 +33,3 @@ extern ai::jetson      jetson_comms;
 extern ai::robot_link  link;
 
 extern int dashboardTask( void );
-
-#endif

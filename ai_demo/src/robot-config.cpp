@@ -1,33 +1,30 @@
 #include "vex.h"
 
 using namespace vex;
-using signature = vision::signature;
-using code = vision::code;
 
-// A global instance of brain used for printing to the V5 Brain screen
-brain  Brain;
-controller Controller;
+// A global instance of brain used for printing to the V5 brain screen
+brain    Brain;
+motor    FrontLeft     (PORT19, true);
+motor    FrontRight    (PORT17);
+motor    BackLeft      (PORT20, true);
+motor    BackRight     (PORT18);
+motor    LowerIndexer  (PORT11);
+motor    UpperIndexer  (PORT1);
+motor    Launcher      (PORT9);
+motor    LeftIntake    (PORT12);
+motor    RightIntake   (PORT13);
 
-// VEXcode device constructors
-motor Left1 = motor(PORT16, ratio18_1, true);
-motor Left2 = motor(PORT18, ratio18_1, false);
-motor Left3 = motor(PORT12, ratio18_1, true);
-motor Right1 = motor(PORT13, ratio18_1, false);
-motor Right2 = motor(PORT14, ratio18_1, false);
-motor Right3 = motor(PORT4, ratio18_1, false);
-motor Middle1 = motor(PORT20, ratio18_1, false);
-//motor Middle2 = motor(PORT13, ratio18_1, false);
-inertial Inertial = inertial(PORT3);
-
-// VEXcode generated functions
-
-
+triport  Expander      (PORT16);
+encoder  LeftEnc       (Expander.G);
+encoder  RightEnc      (Expander.C);
+encoder  BackEnc       (Expander.A);
+inertial Inertial      (PORT5);
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
- * 
+ *
  * This should be called at the start of your int main function.
  */
-void vexcodeInit( void ) {
-  // nothing to initialize
+void vexcodeInit(void) {
+  // Nothing to initialize
 }
